@@ -1,20 +1,5 @@
 version: '3'
 services:
-  client:
-    build:
-      context: .
-      dockerfile: ./docker/client/Dockerfile
-    env_file: 
-      - ./docker/client/.env.development
-    ports:
-      - "8080:8080"
-    links:
-      - crm
-      - ash
-    volumes:
-      - ${PWD}/client/maenager:/client:z
-    stdin_open: true
-    tty: true
   server:
     build:
       context: .
@@ -36,32 +21,3 @@ services:
     restart: on-failure
     volumes:
       - ${PWD}/tmp/pg:/bitnami/postgresql
-  mongo:
-    build:
-      context: .
-      dockerfile: ./docker/mongo/Dockerfile
-    env_file: 
-      - ./docker/mongo/.env.development
-    restart: on-failure
-    volumes:
-      - ${PWD}/tmp/mongo:/data/db
-  redis:
-    build:
-      context: .
-      dockerfile: ./docker/redis/Dockerfile
-    env_file: 
-      - ./docker/redis/.env.development
-    restart: on-failure
-    volumes:
-      - ${PWD}/tmp/redis:/bitnami/redis/data
-  nginx:
-    build:
-      context: .
-      dockerfile: ./docker/nginx/Dockerfile
-    restart: on-failure
-    ports:
-      - "80:80"
-    links:
-      - crm
-      - ash
-      - client

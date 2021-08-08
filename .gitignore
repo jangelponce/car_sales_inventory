@@ -1,0 +1,8 @@
+# Ignore DotEnv local files
+*.local
+
+# Ignore Dump files
+/dump/*
+
+# Ignore Temp files
+/tmp/pg/*
