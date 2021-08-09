@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  make: MyString
-  model: MyString
-  year: MyString
-  price: 9.99
-  state: MyString
+  make: Ford
+  model: F-150
+  year: "2021"
+  price: 100
+  state: brand_new
   dealership: one
 
 two:
-  make: MyString
-  model: MyString
-  year: MyString
-  price: 9.99
-  state: MyString
+  make: Chevrolet
+  model: Silverado
+  year: "2018"
+  price: 100
+  state: used
   dealership: two
