@@ -10,7 +10,30 @@ Inside the project I added the setup.sh script that uses docker-compose to build
 * rails webpacker:install
 * rails db:create db:migrate db:seed
 
-Just run the following in the project's root dir
+To get the project properly configured, just run the following in the project's root dir
 ```
 ./setup.sh
 ```
+
+To run tests
+```
+docker-compose exec server rails test
+```
+
+To run server
+```
+docker-compose exec server rails server
+```
+
+To get into the container and run commands directly
+```
+docker-compose exec server /bin/bash
+```
+
+## Access
+### User
+- email: user@test.com
+- pass: P@ssw0rd
+### Admin
+- email: admin@test.com
+- pass: P@ssw0rd
