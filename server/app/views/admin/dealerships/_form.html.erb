@@ -1,4 +1,4 @@
-<%= form_with(model: dealership) do |form| %>
+<%= form_with(model: [:admin, dealership]) do |form| %>
   <% if dealership.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(dealership.errors.count, "error") %> prohibited this dealership from being saved:</h2>

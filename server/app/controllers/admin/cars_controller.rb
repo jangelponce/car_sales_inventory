@@ -25,8 +25,8 @@ class Admin::CarsController < Admin::BaseController
 
     respond_to do |format|
       if @car.save
-        format.html { redirect_to @car, notice: "Car was successfully created." }
-        format.json { render :show, status: :created, location: @car }
+        format.html { redirect_to admin_car_path(@car), notice: "Car was successfully created." }
+        format.json { render :show, status: :created, location: admin_car_path(@car) }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @car.errors, status: :unprocessable_entity }
@@ -38,8 +38,8 @@ class Admin::CarsController < Admin::BaseController
   def update
     respond_to do |format|
       if @car.update(car_params)
-        format.html { redirect_to @car, notice: "Car was successfully updated." }
-        format.json { render :show, status: :ok, location: @car }
+        format.html { redirect_to admin_car_path(@car), notice: "Car was successfully updated." }
+        format.json { render :show, status: :ok, location: admin_car_path(@car) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @car.errors, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class Admin::CarsController < Admin::BaseController
   def destroy
     @car.destroy
     respond_to do |format|
-      format.html { redirect_to cars_url, notice: "Car was successfully destroyed." }
+      format.html { redirect_to admin_cars_url, notice: "Car was successfully destroyed." }
       format.json { head :no_content }
     end
   end

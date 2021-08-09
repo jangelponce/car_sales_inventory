@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dealerships</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dealerships.each do |dealership| %>
+      <tr>
+        <td><%= dealership.name %></td>
+        <td><%= link_to 'Show', admin_dealership_path(dealership) %></td>
+        <td><%= link_to 'Edit', edit_admin_dealership_path(dealership) %></td>
+        <td><%= link_to 'Destroy', admin_dealership_path(dealership), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dealership', new_admin_dealership_path %>
